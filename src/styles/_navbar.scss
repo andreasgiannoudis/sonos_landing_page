@@ -3,10 +3,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: transparent;
+  background-color: $color-background;
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: transform 0.3s ease-in-out; // animation for hide/show
+
+  &.navbar-show {
+    transform: translateY(0);
+  }
+
+  &.navbar-hide {
+    transform: translateY(-100%); // hide navbar
+  }
 
   .navbar-logo {
     height: 50px;

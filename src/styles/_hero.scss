@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; // helps with stacking on smaller screens
   padding-left: $spacing-lg;
   padding-right: $spacing-lg;
   min-height: 80vh;
@@ -59,10 +60,35 @@
       border-radius: $radius-md;
     }
   }
+
+  // 🔹 Counters section
+  .hero-counters {
+    width: 100%;
+    // 🔹 Frosted-glass effect
+    background-color: rgba(255, 255, 255, 0.3); // semi-transparent white
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); // Safari support
+    border-radius: $radius-lg;
+    padding: $spacing-md;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: #333;
+
+    .counter {
+      font-size: 2rem;
+      font-weight: $font-weight-bold;
+
+      p {
+        font-size: 1rem;
+        color: #2b2b2b;
+      }
+    }
+  }
 }
 
-
-// Mobile
+// 🔹 Mobile
 @media screen and (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -70,12 +96,15 @@
 
     .hero-content {
       max-width: 100%;
+
       h1 {
         font-size: 2rem;
       }
+
       p {
         font-size: 1rem;
       }
+
       .color-buttons {
         justify-content: center;
       }
@@ -84,6 +113,17 @@
     .hero-image {
       max-width: 80%;
       margin-top: $spacing-md;
+    }
+
+    // Counters stacked on mobile
+    .hero-counters {
+      flex-direction: column;
+      gap: $spacing-md;
+      margin-top: $spacing-lg;
+
+      .counter {
+        font-size: 1.5rem;
+      }
     }
   }
 }
