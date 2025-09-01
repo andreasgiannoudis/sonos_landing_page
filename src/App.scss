@@ -1,5 +1,6 @@
 @import "./styles/variables";
 @import "./styles/navbar";
+@import "./styles/hero";
 
 
 
@@ -7,4 +8,5 @@
 body{
   background-color: $color-background;
   margin: 0;
+  font-family: $font-family-base;
 }
